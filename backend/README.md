@@ -16,28 +16,6 @@ The chat application exposes three main endpoints:
 - **Docker** (if deploying using Docker)
 - **Git** (for cloning the repository)
 
-## Configuration
-
-### Environment Variables
-
-The Spring Boot application can be configured entirely via environment variables, allowing you to override any property defined in your configuration files. This is especially useful in production and containerized environments.
-
-For example, to override the datasource URL in production, you can set the environment variable before starting the application:
-
-```bash
-export SPRING_DATASOURCE_URL=jdbc:postgresql://yourhost:5432/yourdb
-java -jar app.jar
-```
-
-When running your application inside a Docker container, pass the necessary environment variables at runtime. For example:
-
-```bash
-docker run -d -p 8080:8080 \
-  -e SPRING_DATASOURCE_URL=jdbc:postgresql://yourhost:5432/yourdb \
-  chat-application
-```
-[https://www.baeldung.com/spring-boot-properties-env-variables](https://www.baeldung.com/spring-boot-properties-env-variables)
-
 ## Building the Application
 
 ### Using Gradle
@@ -57,8 +35,31 @@ The JAR file will be generated in the `build/libs` directory.
 After building, you can run the application locally using the executable JAR:
 
 ```bash
-java -jar build/libs/chat-application.jar
+java -jar build/libs/ChatApp-0.0.1-SNAPSHOT.jar
 ```
+
+## Configuration
+
+### Environment Variables
+
+The Spring Boot application can be configured entirely via environment variables, allowing you to override any property defined in your configuration files. This is especially useful in production and containerized environments.
+
+For example, to override the data source URL in production, you can set the environment variable before starting the application:
+
+```bash
+export SPRING_DATASOURCE_URL=jdbc:postgresql://yourhost:5432/yourdb
+java -jar app.jar
+```
+
+When running your application inside a Docker container, pass the necessary environment variables at runtime. For example:
+
+```bash
+docker run -d -p 8080:8080 \
+  -e SPRING_DATASOURCE_URL=jdbc:postgresql://yourhost:5432/yourdb \
+  chat-application
+```
+
+[https://www.baeldung.com/spring-boot-properties-env-variables](https://www.baeldung.com/spring-boot-properties-env-variables)
 
 ## API Endpoints
 
