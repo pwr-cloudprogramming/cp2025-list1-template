@@ -14,11 +14,10 @@ This is an application created for educational purposes to be hosted using vario
 
 ## Project Setup
 
-1. **Clone the repository:**
+1. **Enter the folder:**
 
    ```bash
-   git clone https://github.com/your-repo/sveltekit-chat.git
-   cd sveltekit-chat
+   cd frontend
    ```
 
 2. **Install dependencies:**
@@ -38,7 +37,7 @@ The application uses dynamic environment variables (via `$env/dynamic/public`) t
 You can create a local `.env` file for development (note that for Docker deployments, the variable can be passed directly):
 
 ```dotenv
-PUBLIC_API_BASE_URL=http://localhost:8080/api
+PUBLIC_API_BASE_URL=http://localhost:8080/
 ```
 
 *Note:* The SvelteKit dynamic public environment variables allow changes at runtime when using the Node adapter.
@@ -53,7 +52,7 @@ To run the application in development mode, use:
 npm run dev
 ```
 
-The app will be available at [http://localhost:5173/](http://localhost:5173/).
+The app will be available at [http://localhost:8081/](http://localhost:8081/).
 
 ---
 
@@ -63,5 +62,3 @@ The project uses the `@sveltejs/adapter-node` adapter to build a production-read
 
 # How to Dockerize and run 
 [https://dev.to/code42cate/how-to-dockerize-sveltekit-3oho](https://dev.to/code42cate/how-to-dockerize-sveltekit-3oho)
-
-
